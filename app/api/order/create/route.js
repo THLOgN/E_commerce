@@ -2,6 +2,7 @@ import { inngest } from "@/config/inngest";
 import Product from "@/models/Product";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import User from "@/models/User";
 
 export async function POST(request) {
   try {
@@ -14,10 +15,12 @@ export async function POST(request) {
         status: 400,
       });
     }
+    //Calculate total amount
     const amount = await items.reduce(async (acc, item) => {
       const product = await Product.findById(item.product);
-      return acc + product.offerPrice * item.quantity;
+      return (await acc) + product.price * item.quantity;
     }, 0);
+    //Create order
     await inngest.send({
       name: "order/created",
       data: {
@@ -28,16 +31,22 @@ export async function POST(request) {
         date: Date.now(),
       },
     });
-    //clear cart
+    //clear user cart
     const user = await User.findById(userId);
     user.cartItems = {};
     await user.save();
+
     //Notify user
-    return NextResponse.json({ success: true, message: "Order placed successfully" });
-
-
+    return NextResponse.json({
+      success: true,
+      message: "Order placed successfully",
+    });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ success: false, message: "Error Order", status: 500 });
+    return NextResponse.json({
+      success: false,
+      message: "Error Order",
+      status: 500,
+    });
   }
 }
