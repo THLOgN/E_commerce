@@ -17,7 +17,7 @@ Pass: user123459876
 
 Next JS Full Stack Ecommerce Project
 Deploy:
-
+https://ecommerceapp-ashen.vercel.app/
 HomePage: 
 ![Image](https://github.com/user-attachments/assets/caa818ba-c8a7-4f95-b97a-5852a1c39594)
 
