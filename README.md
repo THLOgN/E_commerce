@@ -2,11 +2,12 @@ Full Stack E-Commerce App
 
 Front-end: Html, Css, NexJS, Tailwind, Javascript
 
-Back-end: NodeJS, Express.js, MonggoDB, R
+Back-end: NodeJS, Express.js, MonggoDB,
 
 Orther:
     Authentication: Cleck
     Backend workplow : Inngest
+    
 API: REST:ful, Axios
 
 Admin account: admin2002@gmail.com
