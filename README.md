@@ -19,8 +19,7 @@ Next JS Full Stack Ecommerce Project
 Deploy:
 
 HomePage: 
-![image alt]
-(https://res.cloudinary.com/dkdodhn1m/image/upload/v1759075293/allproduct_nr59kf.jpg)
+![Image](https://github.com/user-attachments/assets/caa818ba-c8a7-4f95-b97a-5852a1c39594)
 
 Shopping Page:
 https://res.cloudinary.com/dkdodhn1m/image/upload/v1759075293/allproduct_nr59kf.jpg
